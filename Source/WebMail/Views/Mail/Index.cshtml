@@ -1,0 +1,123 @@
+﻿@model IEnumerable<myWebMail.Models.MailItem>
+@{
+    ViewBag.Title = "Inbox";
+}
+<h1>Mail - Inbox<span class="refreshlink"> &nbsp;@Html.ActionLink("Refresh", "Index")</span></h1>
+<br />
+<br />
+@{bool enableNext = true;}
+@{bool enablePrevious = true;}
+@{int page = ViewBag.Page; }
+@{int nextPage = ViewBag.NextPage; }
+@{int prevPage = ViewBag.PrevPage; }
+@{bool lastPage = ViewBag.LastPage; }
+@{bool noItemsinService = ViewBag.NoItemsinService; }
+
+@if (true)
+{
+    <p>
+        @Html.ActionLink("Create New Email", "Create")
+    </p>
+    <br />
+    <br />
+    <table class="table table-striped">
+        <tr>
+            <th>
+            </th>
+            <th>
+                Sender
+            </th>
+            <th>
+                Subject
+            </th>
+            <th>
+                Received
+            </th>
+            <th>
+                Body
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @if ((Request.QueryString["newid"]) == item.ID)
+                {
+                    <td class="highlighter">New! </td>
+                }
+                else
+                {
+                    if ((Request.QueryString["changedid"]) == item.ID)
+                    {
+                        <td class="highlighter">Updated! </td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Received)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Body)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+                if (item.IsLastItem)
+                {
+                    enableNext = false;
+
+                }
+                if (item.IsFirstItem)
+                {
+                    enablePrevious = false;
+
+                }
+        }
+    </table>
+
+
+    if (noItemsinService == true)
+    {
+        enableNext = false;
+        enablePrevious = false;
+        <h5>You've no email messages in your inbox.</h5>
+    }
+    if (lastPage == true)
+    {
+        enableNext = false;
+    }
+
+    if (enablePrevious == true)
+    {
+        page = prevPage;
+        @Html.ActionLink("Previous", "Index", new { page })
+
+    }
+    if ((enablePrevious == true) && (enableNext == true))
+    {
+        <span> &nbsp;| &nbsp; </span>
+    }
+
+    if (enableNext == true)
+    {
+        page = nextPage;
+        @Html.ActionLink("Next", "Index", new { page })
+    }
+}
+<br />
+<br />
+<br />
+
+<br />

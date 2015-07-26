@@ -1,0 +1,58 @@
+﻿@model myWebMail.Models.MailItem
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h1>Mail - Inbox</h1>
+<h3>Are you sure you want to delete this mail item?</h3>
+<div>
+    @Html.ActionLink("No, take me back to the list", "Index")
+</div>
+
+@using (Html.BeginForm())
+{
+    <hr />
+    <br />
+
+    @Html.ValidationSummary(true)
+
+    <div class="form">
+        <form class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Subject, new { @class = "control-label col-xs-2" })
+                @Html.DisplayFor(model => model.Subject, new { @class = "form-control col-xs-10" })
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sender, new { @class = "control-label col-xs-2" })
+                @Html.DisplayFor(model => model.Sender, new { @class = "form-control col-xs-10" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Recipients, new { @class = "control-label col-xs-2" })
+                @Html.DisplayFor(model => model.Recipients, new { @class = "form-control col-xs-10" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Received, new { @class = "control-label col-xs-2" })
+                @Html.DisplayFor(model => model.Received, new { @class = "form-control col-xs-10" })
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Body, new { @class = "control-label col-xs-2" })
+                @Html.DisplayFor(model => model.Body, new { @class = "form-control col-xs-10" })
+
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <input type="submit" value="Delete" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+}
+@section Scripts
+    {
+    @Scripts.Render("~/bundles/jqueryval")
+}

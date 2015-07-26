@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<br /><br />
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+    <title></title>
+    <meta name="GENERATOR" content="LibreOffice 4.1.6.2 (Linux)">
+    <meta name="AUTHOR" content="Lenovo">
+    <meta name="CREATED" content="20150718;190000000000000">
+    <meta name="CHANGEDBY" content="Lenovo">
+    <meta name="CHANGED" content="20150726;110200000000000">
+    <meta name="AppVersion" content="14.0000">
+    <meta name="DocSecurity" content="0">
+    <meta name="HyperlinksChanged" content="false">
+    <meta name="LinksUpToDate" content="false">
+    <meta name="ScaleCrop" content="false">
+    <meta name="ShareDoc" content="false">
+    <style type="text/css">
+	<!--
+		P { margin-bottom: 0.08in; direction: ltr; widows: 2; orphans: 2 }
+		H1 { margin-top: 0.33in; margin-bottom: 0in; direction: ltr; color: #365f91; page-break-inside: avoid; widows: 2; orphans: 2 }
+		H1.western { font-family: "Cambria", serif; font-size: 14pt }
+		H1.cjk { font-size: 14pt }
+		H1.ctl { font-family: ; font-size: 14pt }
+		A:link { color: #0000ff; so-language: zxx }
+	-->
+    </style>
+</head>
+<body lang="en-US" link="#0000ff" dir="LTR">
+    <p style="margin-bottom: 0.14in">
+        <br><br>
+    </p>
+    <h1 class="western"><font color="#00000a">Technology</font></h1>
+    <p style="margin-bottom: 0.14in">
+        In order to create the web
+        application and under the specifications of the given. I used ASP.NET
+        MVC5. It is a framework for building scalable, standards-based web
+        applications using well-established design patterns and the power of
+        ASP.NET and the .NET Framework.
+    </p>
+    <p style="margin-bottom: 0.14in">
+        In addition to the MVC 5 other
+        technologies have been used. ASP.NET Identity and EF Entity which
+        minimizes the interaction with the database directly and mostly
+        creating and designing the relation schema. Bootstrap framework is
+        also used to achieve the responsive look and feel.
+    </p>
+    <p style="margin-bottom: 0.14in">
+        In order to read emails of Gmail,
+        IMAP protocol should be used which is an application-layer Internet
+        standard protocol used by local e-mail clients to retrieve e-mail
+        from a remote server over a TCP/IP connection. Also for sending
+        emails SMTP protocol is used to send emails.
+    </p>
+    <h1 class="western"><font color="#00000a">Pre-Conditions</font></h1>
+    <p style="margin-bottom: 0.14in">
+        Gmail has some restrictions for 3<sup>rd</sup>
+        party library to access webmail inbox. So before using the web
+        application to access the inbox following steps must be followed:
+    </p>
+    <p style="margin-bottom: 0.14in">
+        After signing in in Gmail, Go to
+        <a href="https://www.google.com/settings/security/lesssecureapps"><font color="#00000a">https://www.google.com/settings/security/lesssecureapps</font></a>
+        and choose “Allow” to let less secure apps access your Google
+        account.
+    </p>
+    <p style="margin-bottom: 0.14in">Also for enabling IMAP:</p>
+    <ul>
+        <li>
+            <p style="margin-bottom: 0.14in">
+                Sign in to the Google Admin
+                console.
+            </p>
+        <li>
+            <p style="margin-bottom: 0.14in">
+                <a name="_GoBack"></a>From the
+                dashboard, go to Apps &gt; Google Apps &gt; Gmail &gt; Advanced
+                settings.
+            </p>
+        <li>
+            <p style="margin-bottom: 0.14in">
+                In the Organizations section,
+                select the organizational unit for which you want to configure
+                settings.
+            </p>
+        <li>
+            <p style="margin-bottom: 0.14in">
+                Under POP and IMAP Access,
+                select or clear the check box for Disable POP and IMAP access for
+                all users in the domain.
+            </p>
+    </ul>
+    <h1 class="western"><font color="#00000a">Design</font></h1>
+    <p style="margin-bottom: 0.14in">
+        The application design was divided
+        into three kinds of components, the model–view–controller design
+        defines the interactions between them.
+    </p>
+    <ul>
+        <li>
+            <p style="margin-bottom: 0.14in">
+                A controller can send commands
+                to the model to update the model's state (e.g., editing a document).
+                It can also send commands to its associated view to change the
+                view's presentation of the model (e.g., by scrolling through a
+                document).
+            </p>
+        <li>
+            <p style="margin-bottom: 0.14in">
+                A model stores data that is
+                retrieved to the controller and displayed in the view. Whenever
+                there is a change to the data it is updated by the controller.
+            </p>
+        <li>
+            <p style="margin-bottom: 0.14in">
+                A view requests information
+                from the model that it uses to generate an output representation to
+                the user.
+            </p>
+    </ul>
+    <p style="margin-bottom: 0.14in">
+        The following diagrams show the flow
+        of the web application:
+    </p>
+    <p align=CENTER style="margin-bottom: 0.14in"><img src="~/images/i_d077dc0ed2097a5a_html_b71983ae.png" name="Picture 2" align=BOTTOM width=525 height=546 border=0></p>
+    <p style="margin-bottom: 0.14in">
+        <br><br>
+    </p>
+    <p align=CENTER style="margin-bottom: 0.14in"><img src="~/images/i_d077dc0ed2097a5a_html_b48d722f.png" name="Picture 3" align=BOTTOM width=624 height=339 border=0></p>
+    <p style="margin-bottom: 0.14in">
+        <br><br>
+    </p>
+    <p align=CENTER style="margin-bottom: 0.14in"><img src="~/images/i_d077dc0ed2097a5a_html_1d69a02a.png" name="Picture 4" align=BOTTOM width=580 height=389 border=0></p>
+</body>
+</html>
+
